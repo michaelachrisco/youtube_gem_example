@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @video.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @video.description %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @video.link %>
+</p>
+
+<p>
+    <strong>Video:</strong>
+    <%= video_tag @video.videolink, :size => "320x240", :controls => true %>
+    <!--<video control autoplay name="media">-->
+        <!--<source src="" type="video/mp4">-->
+    <!--</video>-->
+</p>
+
+
+</p>
+
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>
