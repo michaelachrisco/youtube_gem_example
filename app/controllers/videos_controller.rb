@@ -26,21 +26,14 @@ class VideosController < ApplicationController
   # POST /videos.json
   def create
     @video = Video.new(video_params)
-    youtube = YoutubeDl::YoutubeVideo.new(@video.link, :location => 'public/videos')
+    youtube = YoutubeDl::YoutubeVideo.new(@video.link, :location => 'app/assets/videos')
     @videolink = 'http://localhost:3000/' + youtube.download_video
-    # @video.videolink = @videolink.sub('app/', '').sub('videos/', '')
-    @video.videolink = @videolink
+    @video.videolink = @videolink.sub('app/', '').sub('videos/', '')
     @previewlink = 'http://localhost:3000/' + youtube.download_preview
-    # @video.previewlink = @previewlink.sub('app/', '').sub('videos/', '')
     @video.previewlink = @previewlink
     ap @video
     respond_to do |format|
       if @video.save
-        # youtube = YoutubeDl::YoutubeVideo.new(@video.link)
-        # @download_video_location = youtube.download_video
-        # ap @download_video_location
-        # @preview_location = youtube.download_preview
-        # ap @preview_location
         format.html { redirect_to @video, notice: 'Video was successfully created.' }
         format.json { render :show, status: :created, location: @video }
       else

@@ -37,6 +37,6 @@ gem 'awesome_print', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'youtube_dl'
+gem 'youtube_dl', :git => 'git@github.com:michaelachrisco/youtube_dl.git'
 # gem 'puma'
 # gem 'thin'
