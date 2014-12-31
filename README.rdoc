@@ -1,5 +1,1 @@
-/usr/share/nginx/html/
 
-
-sudo curl https://yt-dl.org/downloads/2014.12.17.2/youtube-dl -o /var/lib/gems/1.9.1/gems/youtube_dl-0.0.2/bin/youtube-dl
-sudo chmod a+x /var/lib/gems/1.9.1/gems/youtube_dl-0.0.2/bin/youtube-dl
